@@ -14,5 +14,5 @@ class DockingStation
   @bike = bike
  end
 
- 
+ #fix issue
 end
