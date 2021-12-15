@@ -5,13 +5,13 @@ class DockingStation
   attr_reader :bike
 
  def release_bike
-   bike = Bike.new
-   return bike
+   fail 'no bikes avaliable' unless @bike 
+   @bike
  end
 
  def dock(bike)
   @bike = bike
  end
 
- #checking
+ 
 end
