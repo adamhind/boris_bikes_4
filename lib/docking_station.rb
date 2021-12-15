@@ -13,5 +13,5 @@ class DockingStation
   @bike = bike
  end
 
- 
+ #checking
 end
