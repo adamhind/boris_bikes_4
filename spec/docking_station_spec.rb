@@ -16,8 +16,7 @@ describe DockingStation do
 
   it 'returns docked bike' do
     bike = Bike.new
-    subject.dock(bike)
-    expect(subject.bike).to eq bike
+    expect(subject.dock(bike)).to eq bike
   end
 
   describe 'release bike method' do
@@ -28,8 +27,8 @@ describe DockingStation do
 
   describe '#dock' do 
     it 'Dock already in use' do 
-      subject.dock(Bike.new)
-      expect {subject.dock(Bike.new)}.to raise_error 'no space available'
+      20.times { subject.dock Bike.new }
+      expect { subject.dock Bike.new }.to raise_error 'no space available'
     end
   end 
 end 
