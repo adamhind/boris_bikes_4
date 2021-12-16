@@ -9,17 +9,22 @@ describe DockingStation do
     expect(subject.release_bike).to be_working
   end
    
+  ######I'm not sure we need this anymore. 
   it 'docks something' do
     bike = Bike.new
-    expect(subject.dock(bike)).to eq bike
+   bikes = []
+  bikes << bike
+  expect(subject.dock(bikes[0])).to eq bikes
   end
 
   it 'returns docked bike' do
     bike = Bike.new
-    expect(subject.dock(bike)).to eq bike
+    bikes = []
+    bikes << bike
+    expect(subject.dock(bikes[0])).to eq bikes
   end
 
-  describe 'release bike method' do
+  describe '#release_bike' do
     it 'no bikes avaliable' do
       expect {subject.release_bike}.to raise_error 'no bikes avaliable'
     end
