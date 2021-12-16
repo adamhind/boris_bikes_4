@@ -1,7 +1,8 @@
 require 'docking_station'
 
 describe DockingStation do 
-  it { is_expected.to respond_to :release_bike }
+  it { expect(subject).to respond_to(:release_bike) }
+  it { expect(subject).to respond_to(:dock).with(1).argument }
 
   it 'releases working bike' do
     bike = Bike.new
@@ -9,15 +10,7 @@ describe DockingStation do
     expect(subject.release_bike).to be_working
   end
    
-  ######I'm not sure we need this anymore. 
-  it 'docks something' do
-    bike = Bike.new
-   bikes = []
-  bikes << bike
-  expect(subject.dock(bikes[0])).to eq bikes
-  end
-
-  it 'returns docked bike' do
+  it 'returns a bike to dock' do
     bike = Bike.new
     bikes = []
     bikes << bike
